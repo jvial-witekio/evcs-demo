@@ -35,7 +35,7 @@ ApplicationWindow {
 
     footer: Footer {
         id: footerItem
-        height: 300
+        height: 64
         pageIndicatorcount: swipeView.count - 1
         onRightButtonReleased: swipeView.currentIndex == (swipeView.count-1) ? swipeView.setCurrentIndex(0) : swipeView.incrementCurrentIndex()
         onLeftButtonReleased: swipeView.decrementCurrentIndex()
