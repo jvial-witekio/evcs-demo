@@ -67,14 +67,6 @@ ApplicationWindow {
             }
         }
 
-        PagePayment
-        {
-            id: pagePayment
-            onPaymentAccepted: footerItem.rightButtonEnabled = 1;
-            onPaymentCanceled: footerItem.rightButtonEnabled = 0;
-            onHelpPage:  infoPopup.open();
-        }
-
         PageCharging
         {
             id: pageCharging
@@ -101,12 +93,7 @@ ApplicationWindow {
                 footerItem.rightButtonText = qsTr("Confirm")
                 infoPopup.setDescription( 2 )
                 break;
-            case 3: // PagePayment
-                footerItem.leftButtonText = qsTr("Back")
-                footerItem.rightButtonText = qsTr("Continue")
-                infoPopup.setDescription( 3 )
-                break;
-            case 4: // PageChargeConfirm
+            case 3: // PageChargeConfirm
                 footerItem.rightButtonText = qsTr("Done")
                 break;
             }
@@ -143,15 +130,7 @@ ApplicationWindow {
                 footerItem.rightButtonEnabled = ( pageChargeSelect.dialValue > Variables.initialCharge );
                 infoPopup.setDescription( 2 )
                 break;
-            case 3: // PagePayment
-                azureEvent.charging = Variables.initialCharge;
-                footerItem.leftButtonVisible = 1
-                footerItem.leftButtonEnabled = 1
-                footerItem.rightButtonVisible = 1
-                footerItem.rightButtonEnabled = 0
-                infoPopup.setDescription( 3 )
-                break;
-            case 4: // PageChargeConfirm
+            case 3: // PageChargeConfirm
                 azureEvent.cost = Variables.currentPrice;
                 footerItem.leftButtonVisible = 0
                 footerItem.leftButtonEnabled = 0
@@ -161,7 +140,7 @@ ApplicationWindow {
                 pageCharging.batteryInfo.topUpCharge = pageChargeSelect.dialValue
                 pageCharging.batteryInfo.chargingStarted = true;
                 pageCharging.batteryInfo.initialCharge = Variables.initialCharge
-                infoPopup.setDescription( 4 )
+                infoPopup.setDescription( 3 )
                 break;
             }
             updateText();
