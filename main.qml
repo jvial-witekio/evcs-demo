@@ -6,8 +6,7 @@ import App 1.0
 ApplicationWindow {
     id: mainWindow
     visible: true
-    width: 1024
-    height: 768
+    visibility: fullscreen
     title: qsTr("Electric Vehicle Charging Station")
 
     background: Image { source: "Assets/Background/EVCS_UI_background_800x480.jpg" }

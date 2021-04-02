@@ -20,7 +20,7 @@ Item {
 
     RowLayout {
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 1024
+        width: parent.width
         height: 64
         FooterButton {
             id: leftButton
@@ -50,7 +50,7 @@ Item {
     }
     Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 1000
+        width: parent.width - 20
         height: 220
         y:70
         radius: 2
